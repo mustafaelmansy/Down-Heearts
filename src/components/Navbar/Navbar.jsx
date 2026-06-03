@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X, Globe, ChevronDown } from 'lucide-react'
-import { PAGE_PATHS, pathnameToPage } from '../../i18n/translations'
+import { pathnameToPage } from '../../i18n/translations'
 import { getPageLabels } from '../../i18n/pageLabels'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { NAV_ITEMS } from '../../config/navigation'
@@ -17,14 +17,14 @@ function NavLink({ active, children, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className={`group relative px-4 py-2 font-display text-[0.9375rem] font-medium tracking-wide transition-colors duration-200 ${
+      className={`group relative shrink-0 px-2 py-1.5 font-display text-[0.6875rem] font-medium leading-tight transition-colors duration-200 lg:px-2.5 lg:text-xs xl:text-[0.8125rem] ${
         active ? 'text-primary' : 'text-ink/75 hover:text-ink'
       }`}
     >
       <span className="relative z-10">{children}</span>
       <span
         aria-hidden
-        className={`absolute bottom-1 left-3 right-3 h-0.5 rounded-full bg-gradient-to-r from-primary via-lavender to-gold transition-transform duration-300 ease-out origin-center ${
+        className={`absolute bottom-0.5 left-2 right-2 h-0.5 rounded-full bg-gradient-to-r from-primary via-lavender to-gold transition-transform duration-300 ease-out origin-center ${
           active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
         }`}
       />
@@ -79,26 +79,21 @@ export default function Navbar() {
           : 'border-b border-sky/30 bg-cream/80 backdrop-blur-lg'
       }`}
     >
-      <nav className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:gap-4 lg:px-8">
         <button
           type="button"
           onClick={() => handleNavClick('/', 'home')}
-          className="group flex min-w-0 items-center gap-3 rounded-2xl text-left transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+          className="group flex shrink-0 items-center gap-2.5 rounded-2xl text-left transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] sm:gap-3"
         >
           <div className="relative shrink-0 rounded-2xl bg-gradient-to-br from-sky/50 to-lavender/40 p-1.5 shadow-sm ring-1 ring-sky/70 transition-shadow duration-300 group-hover:shadow-md">
             <BrandLogo className="h-10 w-10" />
           </div>
-          <div className="hidden min-w-0 sm:block">
-            <span className="block truncate bg-gradient-to-r from-primary via-lavender to-primary bg-clip-text text-lg font-bold tracking-tight text-transparent">
-              Downs Hearts
-            </span>
-            <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-ink/50">
-              Awareness · Support · Love
-            </span>
-          </div>
+          <span className="hidden truncate bg-gradient-to-r from-primary via-lavender to-primary bg-clip-text text-lg font-bold tracking-tight text-transparent sm:block">
+            Downs Hearts
+          </span>
         </button>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden min-w-0 flex-1 items-center justify-end gap-0 md:flex lg:justify-center">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.id}
@@ -114,9 +109,9 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleLanguage}
-            className="inline-flex items-center gap-2 rounded-full border border-sky/80 bg-gold/30 px-3.5 py-2 text-sm font-medium text-ink shadow-sm transition-all duration-200 hover:border-primary/40 hover:bg-gold/50 hover:text-primary hover:shadow-md active:scale-95"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-sky/80 bg-gold/30 px-2.5 py-1.5 text-xs font-medium text-ink shadow-sm transition-all duration-200 hover:border-primary/40 hover:bg-gold/50 hover:text-primary hover:shadow-md active:scale-95 sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
           >
-            <Globe size={17} strokeWidth={2} className="text-primary" />
+            <Globe size={15} strokeWidth={2} className="text-primary sm:h-[17px] sm:w-[17px]" />
             <span className="hidden sm:inline">
               {language === 'en' ? 'العربية' : 'English'}
             </span>

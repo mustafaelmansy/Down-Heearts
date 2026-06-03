@@ -30,8 +30,13 @@ export const NAV_ITEMS = [
       { id: 'prenatal-diagnostic', labelKey: 'subDiagnostic' },
       { id: 'postnatal-diagnosis', labelKey: 'subPostnatal' },
       { id: 'identify-type-egypt', labelKey: 'subTypeEgypt' },
-      { id: 'second-trimester', labelKey: 'subSecondTrimester' },
     ],
+  },
+  {
+    id: 'questions',
+    labelKey: 'questions',
+    path: '/questions',
+    children: [{ id: 'second-trimester', labelKey: 'subSecondTrimester' }],
   },
   {
     id: 'medical',

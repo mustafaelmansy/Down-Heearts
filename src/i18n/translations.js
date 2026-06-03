@@ -1,10 +1,11 @@
-/** @typedef {'home' | 'genetics' | 'medical' | 'medication' | 'interactions' | 'tips' | 'awareness' | 'references' | 'contact'} Page */
+/** @typedef {'home' | 'genetics' | 'questions' | 'medical' | 'medication' | 'interactions' | 'tips' | 'awareness' | 'references' | 'contact'} Page */
 /** @typedef {'en' | 'ar'} Language */
 
 export const translations = {
   en: {
     home: 'Home',
     genetics: 'Genetics',
+    questions: 'Questions',
     medical: 'Medical',
     medication: 'Pharmaceuticals & Dosing',
     interactions: 'Drug Interactions',
@@ -33,6 +34,7 @@ export const translations = {
   ar: {
     home: 'الرئيسية',
     genetics: 'الوراثة',
+    questions: 'أسئلة',
     medical: 'الطبي',
     medication: 'الأدوية والجرعات',
     interactions: 'تفاعلات الأدوية',
@@ -63,6 +65,7 @@ export const translations = {
 export const PAGE_PATHS = {
   home: '/',
   genetics: '/genetics',
+  questions: '/questions',
   medical: '/medical',
   medication: '/medication',
   interactions: '/drug-interactions',

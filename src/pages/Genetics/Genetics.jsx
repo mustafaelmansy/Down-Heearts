@@ -119,34 +119,6 @@ export default function Genetics() {
           </div>
         </div>
       </section>
-
-      <section
-        id="second-trimester"
-        className="scroll-mt-32 border-t border-sky/50 bg-gradient-to-b from-lavender/15 to-cream px-4 py-12 sm:px-6 lg:px-8 lg:py-20"
-      >
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading label={g.pageTitle} title={g.secondTrimesterTitle} />
-          <p className="mb-6 text-lg leading-relaxed text-ink/80">{g.secondTrimesterIntro}</p>
-          <ul className="mb-8 grid gap-2 sm:grid-cols-2">
-            {g.secondTrimesterMarkers.map((marker) => (
-              <li
-                key={marker}
-                className="flex items-center gap-3 rounded-xl border border-sky/60 bg-white/60 px-4 py-3 text-sm font-medium text-ink/85"
-              >
-                <span className="h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden />
-                {marker}
-              </li>
-            ))}
-          </ul>
-          <div className="space-y-5">
-            {g.secondTrimesterBody.map((para, i) => (
-              <p key={i} className="text-base leading-relaxed text-ink/80 sm:text-lg">
-                {para}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

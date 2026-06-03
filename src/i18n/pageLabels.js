@@ -1,6 +1,7 @@
 import { translations } from './translations'
 import { homeContent } from './homeContent'
 import { geneticsContent } from './geneticsContent'
+import { questionsContent } from './questionsContent'
 import { medicalContent } from './medicalContent'
 import { medicationContent } from './medicationContent'
 import { drugInteractionsContent } from './drugInteractionsContent'
@@ -14,6 +15,7 @@ export function getPageLabels(language) {
     ...translations[language],
     ...homeContent[language],
     ...geneticsContent[language],
+    ...questionsContent[language],
     ...medicalContent[language],
     ...medicationContent[language],
     ...drugInteractionsContent[language],

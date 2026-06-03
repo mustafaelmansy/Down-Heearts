@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import Home from './pages/Home/Home'
 import Genetics from './pages/Genetics/Genetics'
+import Questions from './pages/Questions/Questions'
 import Medical from './pages/Medical/Medical'
 import Medication from './pages/Medication/Medication'
 import DrugInteractions from './pages/DrugInteractions/DrugInteractions'
@@ -17,6 +18,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'genetics', element: <Genetics /> },
+      { path: 'questions', element: <Questions /> },
       { path: 'medical', element: <Medical /> },
       { path: 'medication', element: <Medication /> },
       { path: 'drug-interactions', element: <DrugInteractions /> },
