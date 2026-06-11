@@ -6,6 +6,7 @@ import { getPageLabels } from '../../i18n/pageLabels'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { NAV_ITEMS } from '../../config/navigation'
 import BrandLogo from './BrandLogo'
+import ViewCounter from './ViewCounter'
 
 function scrollToSection(sectionId) {
   const el = document.getElementById(sectionId)
@@ -105,7 +106,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <ViewCounter />
           <button
             type="button"
             onClick={toggleLanguage}
